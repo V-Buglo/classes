@@ -5,6 +5,7 @@
 using namespace std;
 
 class Counter {
+private:
 	int i_;
 
 public:
