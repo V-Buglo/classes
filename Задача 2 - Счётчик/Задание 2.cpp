@@ -24,23 +24,20 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
+	Counter counter;
+
 	string change;
 	cout << "Вы хотите указать начальное значение счётчика? Введите да, если так: ";
 	cin >> change;
 	transform(change.begin(), change.end(), change.begin(), ::tolower);
 	int value = 1;
 
-	// я тут немного не поняла при инициализации объекта: 
-	// как мне в рамках условия (if) создать объект класса конструктором (с нач значением или по дефолту), 
-	// чтобы при этом оно сохранилось вне конструкции условия (if)
-	// и объект был виден в последующем цикле (while) 
 	if (change== "да")
 	{
 		cout << "Введите начальное  значение счётчика: ";
 		cin >> value;
+		counter = Counter(value);
 	}
-
-	Counter counter(value);
 
 	while (true) {
 		char changeComand;

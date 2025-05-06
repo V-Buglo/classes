@@ -4,58 +4,52 @@
 using namespace std;
 
 class Calculator {
-	double __num1;
-	double __num2;
 
-	double add() {
-		return __num1 + __num2;
-	}
-
-	double multiply(){
-		return __num1 * __num2;
-	}
-
-	double subtract_1_2(){
-		return __num1 - __num2;
-	}
-
-	double subtract_2_1(){
-		return __num2 - __num1;
-	}
-
-	double divide_1_2(){
-		return __num1 / __num2;
-	}
-
-	double divide_2_1(){
-		return  __num2 / __num1;
-	}
+private:
+	double num1;
+	double num2;
 
 public:
-	bool set_num1(double num1){
-		if (num1 == 0)
+	double add() {
+		return num1 + num2;
+	}
+
+	double multiply() {
+		return num1 * num2;
+	}
+
+	double subtract_1_2() {
+		return num1 - num2;
+	}
+
+	double subtract_2_1() {
+		return num2 - num1;
+	}
+
+	double divide_1_2() {
+		return num1 / num2;
+	}
+
+	double divide_2_1() {
+		return  num2 / num1;
+	}
+
+	bool set_num1(double valuenum1) {
+		if (valuenum1 == 0)
 			return false;
-		
-		__num1 = num1;
+
+		num1 = valuenum1;
 
 		return true;
 	}
-	bool set_num2(double num2){
-		if (num2 == 0)
+
+	bool set_num2(double valuenum2) {
+		if (valuenum2 == 0)
 			return false;
 
-		__num2 = num2;
+		num2 = valuenum2;
 
 		return true;
-	}
-	
-	void get_perform_arithmetic(){
-		cout << "num1 + num2 = " << add()<<endl;
-		cout << "num1 * num2 = " << multiply() << endl;;
-		cout << "num1 - num2 = " << subtract_1_2() << endl;;
-		cout << "num2 - num1 = " << subtract_2_1() << endl;;
-		cout << "num1 / num2 = " << divide_1_2() << endl;;
-		cout << "num2 / num1 = " << divide_2_1() << endl;;
 	}
 
 };
@@ -79,8 +73,14 @@ int main() {
 		cin >> i;
 		num2 = myNumbers.set_num2(i);
 
-		if (num1 && num2)
-			myNumbers.get_perform_arithmetic();
+		if (num1 && num2) {
+			cout << "num1 + num2 = " << myNumbers.add() << endl;
+			cout << "num1 * num2 = " << myNumbers.multiply() << endl;
+			cout << "num1 - num2 = " << myNumbers.subtract_1_2() << endl;
+			cout << "num2 - num1 = " << myNumbers.subtract_2_1() << endl;
+			cout << "num1 / num2 = " << myNumbers.divide_1_2() << endl;
+			cout << "num2 / num1 = " << myNumbers.divide_2_1() << endl;
+		}
 		else
 		{
 			cout << "Некорретный ввод" << endl;
