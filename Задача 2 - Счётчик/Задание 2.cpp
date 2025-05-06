@@ -5,17 +5,17 @@
 using namespace std;
 
 class Counter {
-	int __i;
+	int i_;
 
 public:
 	//конструкторы
-	Counter() { __i = 1; }
-	Counter(int i) { __i = i; }
-	Counter(Counter& C) { __i = C.__i; }
+	Counter() { i_ = 1; }
+	Counter(int i) { i_ = i; }
+	Counter(Counter& C) { i_ = C.i_; }
 
-	void increment() { __i++; }
-	void decrement() { __i--; }
-	void print() { cout << "—чЄтчик: " << __i << endl; }
+	void increment() { i_++; }
+	void decrement() { i_--; }
+	void print() { cout << "—чЄтчик: " << i_ << endl; }
 };
 
 int main() {
